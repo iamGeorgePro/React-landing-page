@@ -32,3 +32,13 @@ body{
 }
 
 
+form i {
+  position: relative;
+  right: 50px;
+  cursor: pointer;
+}
+
+.btn{
+  background: linear-gradient(89.95deg, #F6AC00 -12.08%, #F6AC00 -1.86%, #F6AC00 19.21%, #F6AC00 53.05%, #F6AC00 110.51%);
+
+}
