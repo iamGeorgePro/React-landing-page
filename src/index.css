@@ -42,3 +42,24 @@ form i {
   background: linear-gradient(89.95deg, #F6AC00 -12.08%, #F6AC00 -1.86%, #F6AC00 19.21%, #F6AC00 53.05%, #F6AC00 110.51%);
 
 }
+
+
+.img1 img{
+  position: relative;
+ left: 91.5%;
+ right: 0%;
+}
+
+@media (max-width: 991px) {
+  
+  .img1 img{
+    left: 85%;
+    right: 0;
+  }
+}
+
+@media (max-width: 567px) {
+  .img1 img{
+    display: none;
+  }
+}

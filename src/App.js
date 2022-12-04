@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header/Header'
 import FirstSection from './components/pages/Ui/FirstSection'
 import Profile from './components/pages/Ui/Profile'
+import DeveloperInfo from './components/pages/Ui/DeveloperInfo'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <Header />
     <FirstSection />
     <Profile />
+    <DeveloperInfo />
     
   </section>
   </>
