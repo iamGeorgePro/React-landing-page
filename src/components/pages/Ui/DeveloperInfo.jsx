@@ -8,7 +8,7 @@ function DeveloperInfo() {
   return (
    <section className='mt-[150px] overflow-x-hidden'>
     <div className='img1'>
-        <img src={img1}  alt=''/>
+        <img src={img1}  alt='bar'/>
     </div>
     <div className='container block  md:flex items-center justify-between'>
     <div className='my-10 '>
