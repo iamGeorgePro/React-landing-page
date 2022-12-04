@@ -38,7 +38,7 @@ function DeveloperInfo() {
         </div>
       </div>
       <div className='flex mt-[52px] gap-[14px]'>
-        <div><img src={bar2}  alt=''/></div>
+        <div><img src={bar}  alt=''/></div>
         <div>
         <p className='text-[24px] leading-[30.72px] tracking-[2px] w-[350px] h-[30px] md:w-[569px]  md:h-[62px]'>Get continous funding or grant for your project/idea.</p>
         </div>
