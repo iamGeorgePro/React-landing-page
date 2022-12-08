@@ -44,6 +44,7 @@ form i {
 }
 
 
+
 .img1 img{
   position: relative;
  left: 91.5%;
@@ -62,4 +63,10 @@ form i {
   .img1 img{
     display: none;
   }
+}
+
+@media (max-width: 395px) {
+ .dev_content p{
+  width: 300px;
+ }
 }
