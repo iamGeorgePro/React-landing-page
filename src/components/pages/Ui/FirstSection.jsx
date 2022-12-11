@@ -15,7 +15,7 @@ function FirstSection() {
     <p className='text-center text-sm font-medium mt-[16px]'>We respect your data and will not share it.</p>
     <div className='mt-[100px] container'>
         <div className='block md:flex gap-20 items-center justify-center mb-10'>
-            <div className='bg-white h-full w-full md:h-[383.51px] md:w-[353px] text-center pb-10 rounded-[11px]'>
+            <div className='bg-[#D4DFE7] h-full w-full md:h-[383.51px] md:w-[353px] text-center pb-10 rounded-[11px]'>
                 <p className='md:mt-[52px] md:mx-[33px] mb-[50px] md:mb-[15px] text-[20px] mx-auto md:py-2 w-[300px] h-[100px] md:w-[286px] md:h-[145px] py-4'>Hackathons are the best places to learn, team up, 
                     and build. Participate in a hackathon,
                      or create your own hackathon </p>

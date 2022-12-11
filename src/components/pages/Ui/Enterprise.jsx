@@ -6,7 +6,7 @@ import bar2 from '../../../assets/img/Rectangle 6 (1).png'
 
 function Enterprise() {
   return (
-    <section className='bg-[#D7D9C6E0] mt-52'>
+    <section className='bg-[#EBB40A80] mt-52'>
         <div>
             <img className='relative -top-[70px] left-0' src={img1} alt='' />
         </div>
