@@ -6,7 +6,7 @@ import img2 from '../../../assets/img/d-img.png'
  
 function DeveloperInfo() {
   return (
-   <section className='mt-[150px]'>
+   <section className='mt-[150px] bg-[#EBB40A01]'>
     <p className='mt-[150px] mb-20  md:mb-16 text-center mx-auto font-bold text-[29px] w-full h-full  lg:w-[847px] lg:h-[269px] md:text-[48px] md:leading-[56.88px] tracking-[1.4px]'>Decentralised brain that moderates hackers to solve problems more precisely with a customized solution for each Enterprise problem.
     </p>
     <div className='img1'>
