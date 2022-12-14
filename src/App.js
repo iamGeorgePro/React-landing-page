@@ -5,13 +5,17 @@ import Profile from './components/pages/Ui/Profile'
 import DeveloperInfo from './components/pages/Ui/DeveloperInfo'
 import Enterprise from './components/pages/Ui/Enterprise'
 import Footer from './components/pages/Ui/Footer'
+import { SnackbarProvider } from 'notistack';
 
 function App() {
   return (
   <>
   <section>
     <Header />
+    <SnackbarProvider maxSnack={5} autoHideDuration={5000}>
     <FirstSection />
+    </SnackbarProvider>
+    
     <Profile />
     <DeveloperInfo />
     <Enterprise />

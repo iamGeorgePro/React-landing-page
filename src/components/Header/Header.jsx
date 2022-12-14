@@ -15,10 +15,15 @@ function Header() {
                 <img src={logo} alt='' />
             </div>
             <div className='flex gap-[22px] cursor-pointer'>
-          
-            <img src={img3}  alt=''/>
-            <img src={img1}  alt=''/>
-            <img src={img2}  alt=''/>
+          <a target='_blank' href='#'>
+            <img className='hover:opacity-5 social' src={img3}  alt=''/>
+            </a>
+            <a target='_blank' href='#'>
+            <img className='hover:opacity-5 social' src={img1}  alt=''/>
+            </a>
+            <a target='_blank' href='#'>
+            <img className='hover:opacity-5 social' src={img2}  alt=''/>
+            </a>
             </div>
         </div>
 

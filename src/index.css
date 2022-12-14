@@ -63,10 +63,19 @@ form i {
   .img1 img{
     display: none;
   }
+
+
+  .social{
+    width: 28px;
+    margin-bottom: 17px;
+  }
 }
 
 @media (max-width: 395px) {
  .dev_content p{
   width: 300px;
  }
+ .social{
+  width: 24px;
+}
 }
