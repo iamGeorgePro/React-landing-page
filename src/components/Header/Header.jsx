@@ -8,11 +8,10 @@ function Header() {
   return (
     <>
     <section className='bg-[#FFFFFF9C] h-[82px]'>
-
     <div className='container '>
         <div className='flex justify-between items-center'>
             <div>
-                <img src={logo} alt='' />
+              <img src={logo} alt='' />
             </div>
             <div className='flex gap-[22px] cursor-pointer'>
           <a target='_blank' href='#'>

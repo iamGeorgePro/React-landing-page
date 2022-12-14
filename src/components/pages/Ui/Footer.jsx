@@ -8,7 +8,7 @@ function Footer() {
          continuous funding, grants, bounties, and hackathons.</p>
         </div>
       <div className='mx-auto  text-center  mt-28 md:mt-[65px]'>
-      <button className='btn py-[15px] px-[31px]  text-[#065289] rounded-[10px]'>Join the wait list</button>
+      <button className='shadow-btnShadows btn py-[15px] px-[31px]  text-[#065289] rounded-[10px]'>Join the wait list</button>
       </div>
        
     </section>
