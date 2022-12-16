@@ -58,13 +58,15 @@ function FirstSection() {
                 <p className='md:mt-[52px] md:mx-[33px] mb-[50px] md:mb-[15px] text-[17px]  lg:text-[20px] mx-auto md:py-2 w-[300px] h-[100px] md:w-[286px] md:h-[145px] py-4'>Hackathons are the best places to learn, team up, 
                     and build. Participate in a hackathon,
                      or create your own hackathon </p>
-                     <button className='btn py-[15px] shadow-btnShadows px-[31px] text-[#065289] rounded-[10px] mt-[59px]'>Join the wait list</button>
+                     <a rel="noreferrer" href='https://iuscdh2aeyh.typeform.com/to/C4kEXtfx' target='_blank' >
+                     <button className='btn py-[15px] shadow-btnShadows px-[31px] text-[#065289] rounded-[10px] mt-[59px]'>Join the wait list</button></a>
             </div>
             <div className='bg-[#EBB40A26] shadow-shadows rounded-[11px]  h-full w-full md:w-[340px] md:h-[375.5px] lg:h-[383.51px] lg:w-[353px] text-center pb-10 md:mt-0 mt-10'>
                 <p className='md:mt-[52px] md:mx-[33px] mb-[50px] md:mb-[15px] text-[20px] mx-auto w-[300px] h-[100px] md:w-[286px] md:h-[145px] py-4'>Looking to 
                 create groundbreaking solutions for your newest challenge then Collaborate
                  with the next generation of thinkers on Kwabees</p>
-                     <button className='btn py-[15px] shadow-btnShadows px-[31px]  text-[#065289] rounded-[10px] mt-[65px]'>Join the wait list</button>
+                 <a rel="noreferrer" href='https://iuscdh2aeyh.typeform.com/to/C4kEXtfx' target='_blank' >
+                     <button className='btn py-[15px] shadow-btnShadows px-[31px]  text-[#065289] rounded-[10px] mt-[65px]'>Join the wait list</button></a> 
 
             </div>
 

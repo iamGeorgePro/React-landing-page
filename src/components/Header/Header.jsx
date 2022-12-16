@@ -14,10 +14,10 @@ function Header() {
               <img src={logo} alt='' />
             </div>
             <div className='flex gap-[22px] cursor-pointer'>
-          <a target='_blank' href='#'>
+          <a target='_blank'  rel="noreferrer" href='https://twitter.com/Kwabeeshub'>
             <img className='hover:opacity-5 social' src={img3}  alt=''/>
             </a>
-            <a target='_blank' href='#'>
+            <a  rel="noreferrer" target='_blank' href='https://discord.gg/EYBtvT9HTB'>
             <img className='hover:opacity-5 social' src={img1}  alt=''/>
             </a>
             <a target='_blank' href='#'>
