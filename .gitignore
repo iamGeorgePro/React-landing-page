@@ -6,7 +6,7 @@
 .pnp.js
 /netlify
 # testing
-/Kwabees/kwabees_landing/netlify.toml
+/netlify.toml
 /coverage
 
 # production
