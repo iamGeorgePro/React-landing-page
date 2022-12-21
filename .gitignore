@@ -4,8 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/netlify
 # testing
+/Kwabees/kwabees_landing/netlify.toml
 /coverage
 
 # production
@@ -21,3 +22,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Netlify folder
+.netlify
