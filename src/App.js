@@ -7,6 +7,7 @@ import Enterprise from './components/pages/Ui/Enterprise'
 import Footer from './components/pages/Ui/Footer'
 import { SnackbarProvider } from 'notistack';
 import 'aos/dist/aos.css'
+// Gq8vw585~
 
 function App() {
   return (
