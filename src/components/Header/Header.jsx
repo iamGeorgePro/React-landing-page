@@ -20,7 +20,7 @@ function Header() {
             <a  rel="noreferrer" target='_blank' href='https://discord.gg/EYBtvT9HTB'>
             <img className='hover:opacity-5 social' src={img1}  alt=''/>
             </a>
-            <a target='_blank' href='#'>
+            <a target='_blank' rel="noreferrer"  href='https://t.me/Kwabeeshub'>
             <img className='hover:opacity-5 social' src={img2}  alt=''/>
             </a>
             </div>

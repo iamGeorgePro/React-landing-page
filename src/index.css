@@ -4,11 +4,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Kanit&display=swap');
 
+
 @layer base {
   body {
       @apply font-[Kanit];
   
   }
+
 }
 
 
@@ -45,6 +47,13 @@ form i {
 
 
 
+.ro_text h3{
+color: #F6AC00;
+font-size: 30px;
+}
+
+
+
 .img1 img{
   position: relative;
  left: 91.5%;
@@ -57,18 +66,35 @@ form i {
     left: 85%;
     right: 0;
   }
+
+  body{
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 567px) {
   .img1 img{
     display: none;
   }
-
+  body{
+    overflow-x: hidden;
+  }
 
   .social{
     width: 28px;
     margin-bottom: 17px;
   }
+
+  .fol{
+    margin-top: 50px;
+  }
+  .fol img{
+    width: 100px;
+    }
+
+    .social img{
+      width: 70px;
+    }
 }
 
 @media (max-width: 395px) {
@@ -77,5 +103,13 @@ form i {
  }
  .social{
   width: 24px;
+}
+
+.fol img{
+  width: 100px;
+}
+
+body{
+  overflow-x: hidden;
 }
 }

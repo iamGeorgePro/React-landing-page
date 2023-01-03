@@ -43,7 +43,7 @@ function FirstSection() {
   return (
    <section className='container mt-[132px] mb-[150px]'>
     <div className='text-center mx-auto  lg:w-[913.45px]'>
-        <p className=' font-bold text-[40px]  md:text-[61.91px] leading-[71.19px] tracking-[1.22px]'>Powering the future of hacking and enterprise solutions in Africa (Web3)</p>
+        <p className='first_text font-extrabold text-[40px]  md:text-[61.91px] leading-[71.19px] tracking-[1.22px]'>Powering the future of hacking and enterprise solutions in Africa (Web3)</p>
     </div>
     <p className='font-normal text-center text-[20px] leading-[28.5px] mt-[100px] mb-[16px]'>Sign up for early access</p>
 

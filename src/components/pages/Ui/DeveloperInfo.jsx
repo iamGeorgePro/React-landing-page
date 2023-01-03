@@ -11,12 +11,12 @@ function DeveloperInfo() {
   },[])
   return (
    <section className='mt-[150px] bg-[#EBB40A01]'>
-    <p className='mt-[150px] mb-20  md:mb-16 text-center mx-auto font-bold text-[25px] w-full h-full  lg:w-[847px] lg:h-[269px] md:text-[48px] md:leading-[56.88px] tracking-[1.4px]'>Decentralised brain that moderates hackers to solve problems more precisely with a customized solution for each Enterprise problem.
+    <p className='mt-[150px] mb-20  md:mb-16 text-center mx-auto font-bold text-[25px]  w-[340px] h-full md:w-[795px]  lg:w-[847px] lg:h-[269px] md:text-[48px] md:leading-[56.88px] tracking-[1.4px]'>Decentralised brain that moderates hackers to solve problems more precisely with a customized solution for each Enterprise problem.
     </p>
     <div className='img1'>
         <img src={img1}  alt='bar'/>
     </div>
-    <div className='container block  lg:flex items-center justify-between'>
+    <div className='container block  lg:flex items-center justify-around'>
     <div className='my-10 dev_content'>
       <p className= 'text-center bg-[#EBB40A] py-[11.5px] px-[35px] rounded-[31px] w-[260px] h-[46px] text-[20px] font-bold'>For developers</p>
       <div className='flex mt-[52px] gap-[14px]' data-aos='fade-down'>
