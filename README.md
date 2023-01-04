@@ -25,4 +25,4 @@
 
 
 
-#Discover the world of innovation at Kwabees, BUIDLs, continuous funding, grants, bounties, and hackathons.
+# Discover the world of innovation at Kwabees, BUIDLs, continuous funding, grants, bounties, and hackathons.
