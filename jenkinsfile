@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git branch: 'master', credentialsId: 'github-credentials', url: 'https://github.com/username/my-app.git'
+            }
+        }
+        stage('Build App') {
+            steps {
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t landingPage:latest .'
+            }
+        }
+        stage('Push Image') {
+            steps {
+                withDockerRegistry([credentialsId: 'dockerhub-credentials', url: 'https://hub.docker.com/u/georgepro1']) {
+                    sh 'docker push landingPage:latest'
+                }
+            }
+        }
+    }
+}
