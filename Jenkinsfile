@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                withCredentials([string(credentialsId: 'dockerhub', variable: 'REGISTRY_CREDENTIALS')]) {
+                withCredentials([string(credentialsId: 'docker-creds', variable: 'REGISTRY_CREDENTIALS')]) {
                     sh "echo ${REGISTRY_CREDENTIALS} | docker login -u username --password-stdin registry-url"
                     sh 'docker push georgepro1/spring_ci-cd'
                 }
