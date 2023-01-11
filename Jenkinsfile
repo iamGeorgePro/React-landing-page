@@ -20,9 +20,10 @@ pipeline {
             }
         }
         stage('Push') {
-            steps {withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-    sh "docker login -u $USERNAME -p $PASSWORD https://hub.docker.com/u/georgepro1"
-    sh 'docker push docker push georgepro1/spring_ci-cd'
+           withCredentials([string(credentialsId: 'docker-new', variable: 'TOKEN')]) {
+    sh "docker login --username=georgepro1 --password=${TOKEN}"
+    sh 'docker push georgepro1/spring_ci-cd'
+
 }
                
     }
