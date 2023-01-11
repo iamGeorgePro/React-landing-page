@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    // environment {
+    //     registry = "kubeimran/vproappdock"
+    //     registryCredential = 'dockerhub'
+    // }
     stages {
         stage('Clone Repo') {
             steps {
@@ -10,16 +15,17 @@ pipeline {
         
         stage('Build Image') {
             steps {
-                sh 'docker build -t landingpage:latest .'
+                sh 'docker build -t landingpage .'
+                sh 'docker tag landingpage georgepro1/spring_ci-cd '
             }
         }
-        stage('Push Image') {
+        stage('Push') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-creds', url: 'https://hub.docker.com/u/georgepro1']) {
-                    sh 'docker push landingpage:latest'
+                withCredentials([string(credentialsId: 'dockerhub', variable: 'REGISTRY_CREDENTIALS')]) {
+                    sh "echo ${REGISTRY_CREDENTIALS} | docker login -u username --password-stdin registry-url"
+                    sh 'docker push georgepro1/spring_ci-cd'
                 }
             }
-        }
     }
 }
 
