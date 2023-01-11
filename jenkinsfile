@@ -3,26 +3,56 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'master', credentialsId: 'github-credentials', url: 'https://github.com/username/my-app.git'
+                git branch: 'master', credentialsId: 'git-creds', url: 'https://github.com/iamGeorgePro/React-landing-page.git'
+
             }
         }
-        stage('Build App') {
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
+        
         stage('Build Image') {
             steps {
-                sh 'docker build -t landingPage:latest .'
+                sh 'docker build -t landingpage:latest .'
             }
         }
         stage('Push Image') {
             steps {
-                withDockerRegistry([credentialsId: 'dockerhub-credentials', url: 'https://hub.docker.com/u/georgepro1']) {
-                    sh 'docker push landingPage:latest'
+                withDockerRegistry([credentialsId: 'docker-creds', url: 'https://hub.docker.com/u/georgepro1']) {
+                    sh 'docker push landingpage:latest'
                 }
             }
         }
     }
 }
+
+// pipeline {
+//     agent {
+//         docker {
+//             image 'node:16'
+//         }
+//     }
+//     stages {
+//         stage('Clone') {
+//             steps {
+//                 git 'https://github.com/iamGeorgePro/React-landing-page.git'
+//             }
+//         }
+//         stage('Build') {
+//             steps {
+//                 sh 'npm install'
+//                 sh 'npm run build'
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 sh 'npm test'
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 sh 'docker build -t spring_ci-cd:latest .'
+//                 sh 'docker login -u georgepro1 -p 1996george@'
+//                 sh 'docker push georgepro1/spring_ci-cd:latest'
+//             }
+//         }
+//     }
+// }
+
