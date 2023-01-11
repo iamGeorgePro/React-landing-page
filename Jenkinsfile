@@ -28,7 +28,7 @@ pipeline {
             }
     }
 }
-
+}
 // pipeline {
 //     agent {
 //         docker {
