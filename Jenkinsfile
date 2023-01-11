@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'master', credentialsId: 'git-creds', url: 'https://github.com/iamGeorgePro/React-landing-page.git'
+                git branch: 'main', credentialsId: 'git-creds', url: 'https://github.com/iamGeorgePro/React-landing-page.git'
 
             }
         }
