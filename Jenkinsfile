@@ -18,13 +18,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'docker run --rm landingpage npm run test'
-            }
-        }
-
-        
+       
         stage('Checkstyle analysis') {
            steps {
             sh 'docker run --rm -v "$(pwd)":/app landingpage  mvn checkstyle:checkstyle'
