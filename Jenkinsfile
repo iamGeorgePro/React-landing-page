@@ -12,30 +12,43 @@ pipeline {
 
             }
         }
+    
 
-        stage('Build') {
+        stage('Build Image') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                sh 'docker build -t landingpage .'
+                sh 'docker tag landingpage georgepro1/spring_ci-cd '
             }
         }
+
         stage('Test') {
             steps {
-                sh 'npm run test'
+                sh 'docker run --rm landingpage npm run test'
             }
         }
 
         
-        stage ('CODE ANALYSIS WITH CHECKSTYLE'){
+        stage('Checkstyle analysis') {
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                sh 'docker run --rm -v "$(pwd)":/app landingpage mvn checkstyle:checkstyle'
             }
             post {
-                success {
-                    echo 'Generated Analysis Result'
+                always {
+                    checkstyle pattern: '**/checkstyle-result.xml'
                 }
             }
         }
+        stage('JaCoCo analysis') {
+            steps {
+                sh 'docker run --rm -v "$(pwd)":/app landingpage mvn jacoco:prepare-agent test jacoco:report'
+            }
+            post {
+                always {
+                    jacoco pattern: '**/target/jacoco.exec'
+                }
+            }
+        }
+    }
 
         stage('CODE ANALYSIS with SONARQUBE') {
 
@@ -49,7 +62,7 @@ pipeline {
                    -Dsonar.projectName=landingp \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
-                   -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
+                   -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info/ \
                    -Dsonar.junit.reportsPath=target/surefire-reports/ \
                    -Dsonar.jacoco.reportsPath=target/jacoco.exec \
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
@@ -61,12 +74,7 @@ pipeline {
             }
         }
         
-        stage('Build Image') {
-            steps {
-                sh 'docker build -t landingpage .'
-                sh 'docker tag landingpage georgepro1/spring_ci-cd '
-            }
-        }
+     
         stage('Push') {
             steps {
                withCredentials([string(credentialsId: 'docker-new', variable: 'TOKEN')]) {
@@ -77,7 +85,7 @@ pipeline {
             }
     }
 }
-}
+
 
 // pipeline {
 //     agent {
