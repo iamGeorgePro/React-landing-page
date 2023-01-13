@@ -26,26 +26,26 @@ pipeline {
 
         
         stage('Checkstyle analysis') {
-            steps {
-                sh 'docker run --rm -v "$(pwd)":/app landingpage mvn checkstyle:checkstyle'
-            }
-            post {
-                always {
-                    checkstyle pattern: '**/checkstyle-result.xml'
-                }
-            }
-        }
-        stage('JaCoCo analysis') {
-            steps {
-                sh 'docker run --rm -v "$(pwd)":/app landingpage mvn jacoco:prepare-agent test jacoco:report'
-            }
-            post {
-                always {
-                    jacoco pattern: '**/target/jacoco.exec'
-                }
+        sh 'docker run --rm -v "$(pwd)":/app landingpage  mvn checkstyle:checkstyle'
+        script {
+            def checkstyle = checkstyle(pattern: '**/checkstyle-result.xml')
+            if (checkstyle.failed) {
+                currentBuild.result = "FAILED"
+                error("Checkstyle violations found.")
             }
         }
     }
+    stage('JaCoCo analysis') {
+     steps {
+        sh 'docker run --rm -v "$(pwd)":/app landingpage mvn jacoco:prepare-agent test jacoco:report'
+    }
+    post {
+        always {
+            jacoco pattern: '**/target/jacoco.exec'
+        }
+    }
+}
+    
 
       stage('CODE ANALYSIS with SONARQUBE') {
 
@@ -82,6 +82,6 @@ pipeline {
             }
     }
 }
-
+}
 
 
