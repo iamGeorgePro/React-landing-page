@@ -1,10 +1,7 @@
 pipeline {
     agent any
 
-    // environment {
-    //     registry = "kubeimran/vproappdock"
-    //     registryCredential = 'dockerhub'
-    // }
+
     stages {
         stage('Clone Repo') {
             steps {
@@ -50,7 +47,7 @@ pipeline {
         }
     }
 
-        stage('CODE ANALYSIS with SONARQUBE') {
+      stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
                 scannerHome = tool 'sonar4.8'
@@ -75,7 +72,7 @@ pipeline {
         }
         
      
-        stage('Push') {
+       stage('Push') {
             steps {
                withCredentials([string(credentialsId: 'docker-new', variable: 'TOKEN')]) {
     sh "docker login --username=georgepro1 --password=${TOKEN}"
@@ -87,36 +84,4 @@ pipeline {
 }
 
 
-// pipeline {
-//     agent {
-//         docker {
-//             image 'node:16'
-//         }
-//     }
-//     stages {
-//         stage('Clone') {
-//             steps {
-//                 git 'https://github.com/iamGeorgePro/React-landing-page.git'
-//             }
-//         }
-//         stage('Build') {
-//             steps {
-//                 sh 'npm install'
-//                 sh 'npm run build'
-//             }
-//         }
-//         stage('Test') {
-//             steps {
-//                 sh 'npm test'
-//             }
-//         }
-//         stage('Deploy') {
-//             steps {
-//                 sh 'docker build -t spring_ci-cd:latest .'
-//                 sh 'docker login -u georgepro1 -p 1996george@'
-//                 sh 'docker push georgepro1/spring_ci-cd:latest'
-//             }
-//         }
-//     }
-// }
 
