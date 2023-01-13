@@ -26,8 +26,9 @@ pipeline {
 
         
         stage('Checkstyle analysis') {
-        sh 'docker run --rm -v "$(pwd)":/app landingpage  mvn checkstyle:checkstyle'
-        script {
+           steps {
+            sh 'docker run --rm -v "$(pwd)":/app landingpage  mvn checkstyle:checkstyle'
+            script {
             def checkstyle = checkstyle(pattern: '**/checkstyle-result.xml')
             if (checkstyle.failed) {
                 currentBuild.result = "FAILED"
@@ -35,6 +36,7 @@ pipeline {
             }
         }
     }
+        }
     stage('JaCoCo analysis') {
      steps {
         sh 'docker run --rm -v "$(pwd)":/app landingpage mvn jacoco:prepare-agent test jacoco:report'
